@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAweome CDN Link for Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    
+    <!-- <div class="container"> -->
+        <div class="start">
+            <span>Start Quiz</span>
+        </div>
+        <div class="rules">
+            <div class="head">
+                <span>Some Rules of this Quiz</span>
+            </div>
+            <div class="rules-info">
+                <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+                <div class="info">2. Once you select your answer, it can't be undone.</div>
+                <div class="info">3. You can't select any option once time goes off.</div>
+                <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+                <div class="info">5. You'll get points on the basis of your correct answers.</div>
+            </div>
+            <div class="rules-button">
+                <span class="exit">Exit Quiz</span>
+                <span class="continue">Continue</span>
+            </div>
+        </div>
+        <div class="questions">
+            <div class="head">
+                <span>Awesome Quiz Application</span>
+            <span class="timer">Time Left <span class="time-number">15</span></span>
+            <!-- <div class="animation"></div> -->
+            </div>
+            <div class="question">
+                <!-- <h2>1. What does HTML stand for?</h2>
+                <div class="answers-container">
+                    <div class="answer">
+                        <span>Hyper Text Preprocessor</span>
+                        <div class="icon-correct"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="answer">
+                        <span>Hyper Text Preprocessor</span>
+                        <div class="icon-wrong"><i class="fas fa-times"></i></div>
+                    </div>
+                    <div class="answer">
+                        <span>Hyper Text Preprocessor</span>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="answer">
+                        <span>Hyper Text Preprocessor</span>
+                        <div class="icon"></div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="foot">
+                <span class="number-questions"><!-- 1 of 5 Questions --></span>
+                <span class="button">Next Que</span>
+            </div>
+        </div>
+        <div class="result">
+            <div class="icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="words">
+                You've completed the Quiz! 
+                <br> 
+                <span class="display-result"></span>
+            </div>
+            <span class="display-result"></span>
+            <div class="buttons">
+                <span class="replay"> Replay Quiz </span>
+                <span class="quit"> Quit Quiz </span>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    <script src="main.js"></script>
+</body>
+</html>

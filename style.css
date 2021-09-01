@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: #007bff;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: fit-content;
+}
+/* Start Start Window */
+.start {
+    outline: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+.start span{
+    background-color: white;
+    color: #007bff;
+    padding: 20px 25px;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* End Start Window */
+
+/* Start Rules */
+.start {
+    opacity: 1;
+    outline: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s ease;
+}
+.rules, .questions, .result {
+    outline: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: white;
+    border-radius: 5px;
+    opacity: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+.rules.activeInfo, .questions.activeInfo, .result.activeInfo {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+.head {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 23px;
+    border-bottom: 1px solid lightgrey;
+}
+.rules .rules-info {
+    padding: 15px 32px;
+    border-bottom: 1px solid lightgrey;
+    font-size: 17px;
+}
+.rules .rules-info div {
+    margin: 5px 0;
+}
+.rules .rules-info span {
+    color: #007bff;
+    font-weight: bold;
+}
+.rules-button {
+    padding: 18px;
+    padding-right: 34px;
+    text-align: end;
+}
+.rules-button .exit, .result .buttons .quit {
+    color: #007bff;
+    padding: 6px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+.rules-button .exit:hover, .result .buttons .quit:hover {
+    color: white;
+    background-color: #007bff;
+}
+.rules-button .continue, .questions .foot .button, .result .buttons .replay {
+    color: white;
+    background-color: #007bff;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.rules-button .continue:hover, .questions .foot .button:hover, .result .buttons .replay:hover {
+    background-color: #0070C6;
+}
+.foot {
+    padding: 12px;
+    padding-right: 34px;
+}
+.foot .button {
+    transform: scale(0.9);
+    transition: all ease 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+.foot .button.activeInfo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+/* End Rules */
+
+/* Start Questions */
+.questions {
+    z-index: 200;
+}
+.questions .question {
+    width: 540px;
+    border-bottom: 1px solid lightgray;
+    padding: 15px 32px;
+}
+.questions .head, .questions .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.questions .question h2 {
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.questions .question .answer {
+    position: relative;
+}
+.questions .question .answer span {
+    padding: 10px 20px;
+    background: aliceblue;
+    font-size: 17px;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+.questions .question .answer .icon-correct, .questions .question .answer .icon-incorrect {
+    position: absolute;
+    right: 16px;
+    bottom: 26%;
+}
+.questions .question .answer .icon-correct i {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 24px;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+.questions .question .answer .icon-incorrect i {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 24px;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+.questions .question .answer span:hover, .questions .head .timer {
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+.questions .foot {
+    padding: 10px 34px 10px 23px;
+}
+.questions .head .timer {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 7px 13px;
+    border-radius: 7px;
+}
+.questions .head .timer .time-number {
+    background: #343a40;
+    border: 1px solid #343a40;
+    color: white;
+    padding: 3px 8px;
+    font-weight: 500;
+    border-radius: 7px;
+}
+.disabled {
+    pointer-events: none;
+}
+.questions .question .answer span.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+.questions .question .answer span.correct {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+/* Make Timer Bar Animation */
+.questions .head {
+    position: relative;
+}
+.questions .animation {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    animation: timerbar linear forwards 16s;
+}
+@keyframes timerbar {
+    0% {
+        width: 0;
+        background-color: #007bff;
+    }
+    100% {
+        background-color: #007bff;
+    }
+}
+.questions .animation.pause-animation {
+    animation-play-state: paused;
+}
+/* End Questions */
+
+/* Start Results */
+.result.none, .questions.none, .rules.none, .start.none {
+    display: none;
+}
+.result {
+    padding: 20px 60px 50px;
+    text-align: center;
+}
+.result .icon {
+    margin: 28px auto;
+}
+.result .icon i {
+    color: #007bff;
+    font-size: 100px;
+}
+.result .words {
+    font-weight: 500;
+    font-size: 19px;
+}
+.result .display-result {
+    display: block;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    font-size: 19px;
+}
+.result .buttons .quit {
+    margin-left: 20px;
+}
+.result .buttons .quit, .result .buttons .replay {
+    padding: 9px 18px;
+    font-size: 18px;
+}
+/* End Results */
